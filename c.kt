@@ -10,6 +10,9 @@ fun main(){
             var number = c.toString().toInt()
             if(x=="0"){x = ""}
             x += number
+            if(symbol!=null){
+                first = result(first, x, symbol)
+            }
         }
         catch(e: Exception){
             if(c == '.' && !is_comma){
@@ -19,9 +22,6 @@ fun main(){
             if(c!='.'){
                 if(symbol == null) {
                     first = x.toDouble()
-                }
-                else{
-                    first = result(first, x, symbol)
                 }
                 symbol = c
                 x = "0"
